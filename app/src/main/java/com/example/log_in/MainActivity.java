@@ -60,7 +60,14 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra( "usr",txt1);
                 intent.putExtra( "pws",txt2);
                 startActivity(intent);
+            }
+        });
 
+        btn_reg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int_registro = new Intent(MainActivity.this, registro.class);
+                startActivity(int_registro);
             }
         });
     }
