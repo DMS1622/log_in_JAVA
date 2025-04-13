@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/drawable/background_layout.xml -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Sombra (capa inferior) -->
+    <item android:right="2dp" android:bottom="2dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#BDBDBD"/> <!-- Gris sombra -->
+            <corners android:radius="18dp"/>
+        </shape>
+    </item>
+
+    <!-- Fondo blanco con bordes redondeados (capa superior) -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#FFFFFF"/> <!-- Fondo blanco -->
+            <corners android:radius="18dp"/>
+        </shape>
+    </item>
+
+</layer-list>

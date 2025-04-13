@@ -1,19 +1,22 @@
 package com.example.log_in;
-
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.example.log_in.home.home;
 import com.example.log_in.registro.registro;
 
 public class MainActivity extends AppCompatActivity {
 
+    private Toolbar menu_act;
     private Button btn_ini;
     private Button btn_reg;
 
@@ -26,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        setToolBar();
         btn_ini = findViewById(R.id.btn_log);
         btn_reg = findViewById(R.id.btn_register);
 
@@ -39,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
                 String txt1 = txt_u.getText().toString();;
                 intent_h.putExtra( "usr",txt1);
                 startActivity(intent_h);
+                finish();
             }
         });
         btn_reg.setOnClickListener(new View.OnClickListener() {
@@ -52,5 +57,24 @@ public class MainActivity extends AppCompatActivity {
     {
         Intent intent = new Intent(MainActivity.this,cls);
         startActivity(intent);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_xx, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.item_agregar){
+//Realizar acción
+        }
+        return super.onOptionsItemSelected(item);
+    }
+    public void setToolBar()
+    {
+        menu_act = findViewById(R.id.menu_tab);
+        setSupportActionBar(menu_act);
+        setTitle("Log In Libros");
     }
 }
